@@ -15,18 +15,6 @@ I used SQL in MySQL Workbench to answer **8 analytical questions**, then summari
 
 ---
 
-## 🔍 Questions & Queries  
-
-### 1. Which states grew the fastest between 2010 and 2020?  
-```sql
-SELECT state,
-       (MAX(population) - MIN(population)) AS growth,
-       ROUND(100.0 * (MAX(population) - MIN(population)) / MIN(population), 2) AS pct_growth
-FROM population
-WHERE year BETWEEN 2010 AND 2020
-GROUP BY state
-ORDER BY pct_growth DESC
-LIMIT 10;
 ```
 *Finding:* Identifies the top 10 states by percentage growth.  
 
