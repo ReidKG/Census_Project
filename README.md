@@ -22,19 +22,6 @@ GROUP BY state
 HAVING pct_pop_growth > 15 AND pct_income_growth > 20
 ORDER BY pct_income_growth DESC;
 ```
-*Finding:* Identifies states succeeding on both fronts.  
-
----
-
-### 6. Median Household Income Trend (Colorado, Virginia, West Virginia)  
-```sql
-SELECT state, year, median_household_income
-FROM population
-WHERE state IN ('Colorado','Virginia','West Virginia')
-  AND year BETWEEN 2010 AND 2020
-ORDER BY state, year;
-```
-*Finding:* Compares income growth across 3 focus states (export to line chart).  
 
 ---
 
@@ -50,18 +37,6 @@ ORDER BY state, year;
 
 ---
 
-### 8. Quick Summary Stats (Average over the Decade)  
-```sql
-SELECT state,
-       ROUND(AVG(median_household_income), 0) AS avg_income,
-       ROUND(AVG(pct_bachelors), 1) AS avg_bachelors,
-       ROUND(AVG(median_age), 1) AS avg_age
-FROM population
-WHERE state IN ('Colorado','Virginia','West Virginia')
-  AND year BETWEEN 2010 AND 2020
-GROUP BY state;
-```
-*Finding:* Gives a neat side-by-side comparison table of income, education, and age.  
 
 ---
 
