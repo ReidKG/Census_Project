@@ -15,29 +15,7 @@ I used SQL in MySQL Workbench to answer **8 analytical questions**, then summari
 
 ---
 
-*Finding:* Tests correlation between education and income across states.  
-
----
-
-### 4. Which states had the largest increase in median age over the decade?  
-```sql
-SELECT state,
-       MAX(median_age) - MIN(median_age) AS age_increase
-FROM population
-WHERE year BETWEEN 2010 AND 2020
-GROUP BY state
-ORDER BY age_increase DESC
-LIMIT 10;
-```
-*Finding:* Highlights aging states (Midwest/Northeast tend to lead).  
-
----
-
-### 5. Which states have high population growth AND high income growth?  
-```sql
-SELECT state,
-       ROUND(100.0 * (MAX(population) - MIN(population)) / MIN(population), 2) AS pct_pop_growth,
-       ROUND(100.0 * (MAX(median_household_income) - MIN(median_household_income)) / MIN(median_household_income), 2) AS pct_income_growth
+pct_income_growth
 FROM population
 WHERE year BETWEEN 2010 AND 2020
 GROUP BY state
