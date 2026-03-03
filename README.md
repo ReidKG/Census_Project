@@ -15,31 +15,6 @@ I used SQL in MySQL Workbench to answer **8 analytical questions**, then summari
 
 ---
 
-pct_income_growth
-FROM population
-WHERE year BETWEEN 2010 AND 2020
-GROUP BY state
-HAVING pct_pop_growth > 15 AND pct_income_growth > 20
-ORDER BY pct_income_growth DESC;
-```
-
----
-
-### 7. Education (% with Bachelor’s degree) Trend (Colorado, Virginia, West Virginia)  
-```sql
-SELECT state, year, pct_bachelors
-FROM population
-WHERE state IN ('Colorado','Virginia','West Virginia')
-  AND year BETWEEN 2010 AND 2020
-ORDER BY state, year;
-```
-*Finding:* Compares education levels across the same 3 states.  
-
----
-
-
----
-
 ## 📈 Insights
 - **Growth:** Colorado and Virginia grew quickly, while West Virginia declined.  
 - **Income:** Texas and high-education states saw steady income gains.  
