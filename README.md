@@ -15,32 +15,6 @@ I used SQL in MySQL Workbench to answer **8 analytical questions**, then summari
 
 ---
 
-```
-*Finding:* Identifies the top 10 states by percentage growth.  
-
----
-
-### 2. What’s the trend in median household income in Texas from 2010–2020?  
-```sql
-SELECT year, median_household_income
-FROM population
-WHERE state = 'Texas'
-ORDER BY year;
-```
-*Finding:* Shows year-by-year income growth in Texas.  
-
----
-
-### 3. Do states with higher bachelor’s degree % also have higher incomes?  
-```sql
-SELECT state,
-       ROUND(AVG(pct_bachelors), 1) AS avg_bachelors,
-       ROUND(AVG(median_household_income), 0) AS avg_income
-FROM population
-WHERE year BETWEEN 2010 AND 2020
-GROUP BY state
-ORDER BY avg_bachelors DESC;
-```
 *Finding:* Tests correlation between education and income across states.  
 
 ---
