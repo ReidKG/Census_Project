@@ -132,12 +132,3 @@ GROUP BY state;
 - **Regional differences:** Aging in slower-growth states, youth + education in high-growth ones.  
 
 ---
-
-## 📂 Project Structure
-```
-Census_SQL_Project/
-│── census_analysis.sql   # SQL queries for all 8 questions
-│── results/              # CSV exports of query outputs
-│── visuals/              # Graphs and charts (optional)
-│── README.md             # Project summary
-```
